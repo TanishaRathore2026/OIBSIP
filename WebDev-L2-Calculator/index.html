@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>NexaCalc | Modern Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <section class="calculator">
+
+            <div class="brand">
+                <div>
+                    <p class="brand-name">NexaCalc</p>
+                    <span>Smart • Simple • Precise</span>
+                </div>
+
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                    ☀
+                </button>
+            </div>
+
+            <div class="display-container">
+
+                <div id="expression" class="expression"></div>
+
+                <input
+                    type="text"
+                    id="display"
+                    class="display"
+                    value="0"
+                    readonly
+                    aria-label="Calculator display"
+                >
+
+            </div>
+
+            <div class="keypad">
+
+                <button class="key function" data-action="clear">AC</button>
+                <button class="key function" data-action="delete">⌫</button>
+                <button class="key operator" data-value="%">%</button>
+                <button class="key operator" data-value="/">÷</button>
+
+                <button class="key number" data-value="7">7</button>
+                <button class="key number" data-value="8">8</button>
+                <button class="key number" data-value="9">9</button>
+                <button class="key operator" data-value="*">×</button>
+
+                <button class="key number" data-value="4">4</button>
+                <button class="key number" data-value="5">5</button>
+                <button class="key number" data-value="6">6</button>
+                <button class="key operator" data-value="-">−</button>
+
+                <button class="key number" data-value="1">1</button>
+                <button class="key number" data-value="2">2</button>
+                <button class="key number" data-value="3">3</button>
+                <button class="key operator" data-value="+">+</button>
+
+                <button class="key number zero" data-value="0">0</button>
+                <button class="key number" data-value=".">.</button>
+                <button class="key equals" data-action="calculate">=</button>
+
+            </div>
+
+            <div class="history-section">
+
+                <div class="history-header">
+                    <h2>Recent Calculations</h2>
+                    <button id="clearHistory">Clear</button>
+                </div>
+
+                <div id="history" class="history">
+                    <p class="empty-history">No calculations yet</p>
+                </div>
+
+            </div>
+
+            <footer>
+                <span>Built with HTML • CSS • JavaScript</span>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
