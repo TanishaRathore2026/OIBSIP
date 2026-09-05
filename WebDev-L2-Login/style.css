@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #101010;
+    --cream: #f5f1e9;
+    --gold: #b38a52;
+    --muted: #85827c;
+    --line: #ddd8cf;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--black);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+}
+
+
+/* =========================
+   VISUAL SIDE
+========================= */
+
+.visual {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,10,10,.92),
+            rgba(30,24,18,.75)
+        ),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    padding: 45px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visual::after {
+    content: "";
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(179,138,82,.18);
+
+    filter: blur(100px);
+
+    right: -150px;
+    bottom: -150px;
+}
+
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.7)
+        );
+}
+
+.brand {
+    position: relative;
+    z-index: 2;
+
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.brand span,
+.mobile-logo span {
+    color: var(--gold);
+}
+
+.visual-content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+}
+
+.visual .eyebrow {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.visual h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 6vw, 90px);
+
+    line-height: .92;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+}
+
+.visual h1 em {
+    color: #c7a675;
+}
+
+.visual-content > p:last-child {
+    max-width: 390px;
+
+    margin-top: 30px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.visual-footer {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   AUTH
+========================= */
+
+.auth {
+    background: var(--cream);
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px;
+}
+
+.auth-inner {
+    width: min(420px, 100%);
+}
+
+.mobile-logo {
+    display: none;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+    letter-spacing: 3px;
+
+    margin-bottom: 55px;
+}
+
+.auth-heading {
+    margin-bottom: 38px;
+}
+
+.auth-heading .eyebrow {
+    margin-bottom: 18px;
+}
+
+.auth-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 4vw, 58px);
+
+    line-height: .95;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.subtext {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.field {
+    margin-bottom: 25px;
+}
+
+.field label,
+.label-row label {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 9px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-row label {
+    margin-bottom: 9px;
+}
+
+.forgot {
+    border: none;
+    background: none;
+
+    color: var(--gold);
+
+    font-size: 10px;
+}
+
+.field input {
+    width: 100%;
+
+    border: none;
+
+    border-bottom: 1px solid var(--line);
+
+    background: transparent;
+
+    padding: 13px 0;
+
+    outline: none;
+
+    color: var(--black);
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.field input:focus {
+    border-color: var(--gold);
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 40px;
+}
+
+.eye {
+    position: absolute;
+
+    right: 0;
+    bottom: 10px;
+
+    border: none;
+
+    background: none;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+.error {
+    display: block;
+
+    min-height: 15px;
+
+    color: #b44c4c;
+
+    font-size: 10px;
+
+    margin-top: 6px;
+}
+
+.options {
+    margin: 2px 0 28px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.remember input {
+    accent-color: var(--gold);
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    padding: 17px 20px;
+
+    border: none;
+
+    background: var(--black);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    transition: .35s;
+}
+
+.login-btn strong {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.login-btn:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+.success {
+    color: #557a5c;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    margin-top: 14px;
+
+    min-height: 15px;
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 32px 0 20px;
+
+    color: #aaa;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: var(--line);
+}
+
+.socials {
+    display: flex;
+
+    gap: 10px;
+}
+
+.social {
+    flex: 1;
+
+    height: 44px;
+
+    border: 1px solid var(--line);
+
+    background: transparent;
+
+    color: #555;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.social:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+.signup {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+.signup a,
+.privacy a {
+    color: var(--gold);
+
+    text-decoration: none;
+}
+
+.privacy {
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    margin-top: 45px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(0,0,0,.65);
+
+    display: none;
+
+    place-items: center;
+
+    padding: 20px;
+}
+
+.modal.active {
+    display: grid;
+}
+
+.modal-box {
+    position: relative;
+
+    background: var(--cream);
+
+    width: min(400px, 100%);
+
+    padding: 45px;
+
+    box-shadow: 0 30px 100px rgba(0,0,0,.25);
+}
+
+.close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    color: #777;
+}
+
+.modal-box h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    margin: 15px 0;
+}
+
+.modal-box p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.modal-btn {
+    width: 100%;
+
+    border: none;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 14px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .visual {
+        display: none;
+    }
+
+    .auth {
+        padding: 35px 8%;
+
+        align-items: flex-start;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .auth {
+        padding: 30px 7%;
+    }
+
+    .mobile-logo {
+        margin-bottom: 70px;
+    }
+
+    .auth-heading h2 {
+        font-size: 43px;
+    }
+
+    .social {
+        height: 42px;
+    }
+
+}
