@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Veyra | Secure Access</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- LEFT VISUAL PANEL -->
+
+    <section class="visual">
+
+        <div class="visual-overlay"></div>
+
+        <div class="brand">
+            VEYRA<span>.</span>
+        </div>
+
+        <div class="visual-content">
+
+            <p class="eyebrow">
+                PRIVATE SPACE · 01
+            </p>
+
+            <h1>
+                Your world.<br>
+                <em>Your space.</em>
+            </h1>
+
+            <p>
+                A quiet place to organize your work,
+                ideas and everything that matters.
+            </p>
+
+        </div>
+
+        <div class="visual-footer">
+            <span>EST. 2026</span>
+            <span>SECURE · SIMPLE · PRIVATE</span>
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN PANEL -->
+
+    <section class="auth">
+
+        <div class="auth-inner">
+
+            <div class="mobile-logo">
+                VEYRA<span>.</span>
+            </div>
+
+            <div class="auth-heading">
+
+                <p class="eyebrow">WELCOME BACK</p>
+
+                <h2>
+                    Sign in to<br>
+                    your account.
+                </h2>
+
+                <p class="subtext">
+                    Enter your details to continue.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="field">
+
+                    <label for="email">
+                        EMAIL ADDRESS
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                    >
+
+                    <small class="error" id="emailError"></small>
+
+                </div>
+
+
+                <div class="field">
+
+                    <div class="label-row">
+
+                        <label for="password">
+                            PASSWORD
+                        </label>
+
+                        <button
+                            type="button"
+                            id="forgotBtn"
+                            class="forgot"
+                        >
+                            Forgot password?
+                        </button>
+
+                    </div>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="eye"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                    <small class="error" id="passwordError"></small>
+
+                </div>
+
+
+                <div class="options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    <span>Sign in</span>
+                    <strong>→</strong>
+                </button>
+
+                <p id="successMessage" class="success"></p>
+
+            </form>
+
+
+            <div class="divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+
+
+            <div class="socials">
+
+                <button type="button" class="social">
+                    G
+                </button>
+
+                <button type="button" class="social">
+                    f
+                </button>
+
+                <button type="button" class="social">
+                    in
+                </button>
+
+            </div>
+
+
+            <p class="signup">
+                Don't have an account?
+                <a href="#" id="signupBtn">Create one</a>
+            </p>
+
+
+            <p class="privacy">
+                By continuing, you agree to our
+                <a href="#">Terms</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeModal">×</button>
+
+        <p class="eyebrow">VEYRA ACCOUNT</p>
+
+        <h3 id="modalTitle">
+            Create your account
+        </h3>
+
+        <p id="modalText">
+            Your account setup would begin here.
+        </p>
+
+        <button
+            class="modal-btn"
+            id="modalAction"
+        >
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
